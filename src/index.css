@@ -52,8 +52,10 @@ form {
 
 .select-options select {
   border-radius: 3px;
-  padding: 5px;
+  width: 145px;
+  padding: 7px;
   border: 1px solid #444;
+  background: white;
 }
 
 .description {

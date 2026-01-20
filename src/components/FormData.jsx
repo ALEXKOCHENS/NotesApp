@@ -1,28 +1,37 @@
 import { useState } from 'react';
 
-const Controlled = ({ title }) => {
-  const [name, setName] = useState('');
-  const [priority, setPriority] = useState('High');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('Work');
-
+const FormData = ({ heading }) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    priority: 'High',
+    category: 'Work',
+    description: '',
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <form>
       <div className='title-input'>
-        <label htmlFor='Title'>{title}</label>
+        <label htmlFor='Title'>{heading}</label>
         <input
+          name='title'
           type='text'
           placeholder='Add new note'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={formData.name}
+          onChange={handleChange}
         />
       </div>
       <div className='select-options'>
         <label htmlFor='select'>Select Priority:</label>
         <select
           type='text'
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          name='priority'
+          value={formData.priority}
+          onChange={handleChange}
         >
           <option value='High'>High</option>
           <option value='Medium'>Medium</option>
@@ -34,8 +43,9 @@ const Controlled = ({ title }) => {
         <label htmlFor='select'>Select Category:</label>
         <select
           type='text'
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          name='category'
+          value={formData.category}
+          onChange={handleChange}
         >
           <option value='Work'>Work</option>
           <option value='School'>School</option>
@@ -46,10 +56,11 @@ const Controlled = ({ title }) => {
 
       <div className='description'>
         <input
+          name='description'
           type='textarea'
-          value={description}
+          value={formData.description}
           placeholder='Add description'
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={handleChange}
         />
       </div>
       <button className='add-note'>Add Note</button>
@@ -57,4 +68,4 @@ const Controlled = ({ title }) => {
   );
 };
 
-export default Controlled;
+export default FormData;

@@ -1,6 +1,10 @@
-import Controlled from './components/Controlled';
+import FormData from './components/FormData';
 const App = () => {
-  return <Controlled title='Notes App' />;
+  return (
+    <div>
+      <FormData heading='Notes App' />
+    </div>
+  );
 };
 
 export default App;
