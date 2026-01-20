@@ -1,5 +1,6 @@
+import Controlled from './components/Controlled';
 const App = () => {
-  return <div>Todo App</div>;
+  return <Controlled title='Notes App' />;
 };
 
 export default App;

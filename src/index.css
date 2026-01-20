@@ -7,3 +7,78 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+form {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-input {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.title-input label {
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+.title-input input {
+  padding: 15px;
+  font-size: 15px;
+  width: 270px;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+.select-options {
+  display: flex;
+  padding: 20px 0;
+}
+.select-options label {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.select-options select {
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #444;
+}
+
+.description {
+  padding: 10px;
+}
+.description input {
+  font-size: 15px;
+  padding: 18px;
+  width: 270px;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+.add-note {
+  padding: 10px;
+  margin: 20px auto;
+  cursor: pointer;
+  border: none;
+  width: 260px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #6cd90d;
+}
+
+.add-note:hover {
+  font-size: 14px;
+  transition: all ease 0.1s;
+}
