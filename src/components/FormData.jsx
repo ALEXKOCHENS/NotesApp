@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FormData = ({ heading }) => {
+const FormData = ({ heading, notes, addNotes }) => {
   const [formData, setFormData] = useState({
     title: '',
     priority: 'High',
@@ -13,8 +13,33 @@ const FormData = ({ heading }) => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleSubmit = (e) => {
+    //Validation
+    e.preventDefault();
+    if (!formData.title) alert('Please add a note');
+    if (!formData.description) alert('Please add a description');
+
+    //create note object
+    const newNote = {
+      id: Date.now(),
+      ...formData,
+    };
+
+    //add notes to state
+    addNotes([newNote, ...notes]);
+
+    //reset the form data
+
+    setFormData({
+      title: '',
+      priority: 'High',
+      category: 'Work',
+      description: '',
+    });
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className='title-input'>
         <label htmlFor='Title'>{heading}</label>
         <input
@@ -63,7 +88,9 @@ const FormData = ({ heading }) => {
           onChange={handleChange}
         />
       </div>
-      <button className='add-note'>Add Note</button>
+      <button type='submit' className='add-note'>
+        Add Note
+      </button>
     </form>
   );
 };

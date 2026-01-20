@@ -3,8 +3,8 @@ import { useState } from 'react';
 const Controlled = ({ title }) => {
   const [name, setName] = useState('');
   const [priority, setPriority] = useState('High');
-  const [description, setDescription] = useState('');
   const [category, setCategory] = useState('Work');
+  const [description, setDescription] = useState('');
 
   return (
     <form>
