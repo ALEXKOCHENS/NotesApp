@@ -1,0 +1,33 @@
+const NoteList = ({ notes }) => {
+  if (notes.length === 0) {
+    return (
+      <p className='no-notes'>
+        No Notes yet!!, Please add some notes to see them here
+      </p>
+    );
+  }
+  return (
+    <div className='notes'>
+      {notes.map((note) => (
+        <div key={note.id} className='note-list'>
+          <span>
+            <strong>Title:</strong> {note.title}
+          </span>
+          <span>
+            <strong>Priority: </strong>
+            {note.priority}
+          </span>
+          <span>
+            <strong>Category:</strong> {note.category}
+          </span>
+          <span>
+            <strong>Description:</strong>
+            {note.description}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default NoteList;

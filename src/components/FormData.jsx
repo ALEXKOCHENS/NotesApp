@@ -16,10 +16,9 @@ const FormData = ({ heading, notes, addNotes }) => {
   };
 
   const handleSubmit = (e) => {
-    //Validation
     e.preventDefault();
-    if (!formData.title) alert('Please add a note');
-    if (!formData.description) alert('Please add a description');
+    //Validation
+    if (!formData.title || !formData.description) return;
 
     //create note object
     const newNote = {
@@ -47,7 +46,7 @@ const FormData = ({ heading, notes, addNotes }) => {
           name='title'
           type='text'
           placeholder='Add new note'
-          value={formData.name}
+          value={formData.title}
           onChange={handleChange}
         />
       </div>
