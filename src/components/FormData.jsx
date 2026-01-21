@@ -10,7 +10,7 @@ const FormData = ({ heading, notes, addNotes }) => {
   });
 
   //State  to toggle the form visibility
-  const [formVisible, setVisibility] = useState(false);
+  const [isFormVisible, setVisibility] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -49,12 +49,12 @@ const FormData = ({ heading, notes, addNotes }) => {
 
         <Button
           className='add-notes'
-          onClick={() => setVisibility(!formVisible)}
+          onClick={() => setVisibility(!isFormVisible)}
         >
-          {formVisible ? 'Close Form x' : 'Add Notes +'}
+          {isFormVisible ? 'Close Form x' : 'Add Notes +'}
         </Button>
       </div>
-      {formVisible && (
+      {isFormVisible && (
         <form onSubmit={handleSubmit}>
           <div className='title-input'>
             <input
