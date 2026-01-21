@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Button';
 
 const FormData = ({ heading, notes, addNotes }) => {
   const [formData, setFormData] = useState({
@@ -88,9 +89,9 @@ const FormData = ({ heading, notes, addNotes }) => {
           onChange={handleChange}
         />
       </div>
-      <button type='submit' className='add-note'>
+      <Button type='submit' className='add-note'>
         Add Note
-      </button>
+      </Button>
     </form>
   );
 };
