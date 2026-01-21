@@ -6,6 +6,7 @@ const NoteList = ({ notes }) => {
       </p>
     );
   }
+
   return (
     <div className='notes'>
       {notes.map((note) => (

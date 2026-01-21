@@ -8,6 +8,10 @@ const FormData = ({ heading, notes, addNotes }) => {
     category: 'Work',
     description: '',
   });
+
+  //State  to toggle the form visibility
+  const [formVisible, setVisibility] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -39,59 +43,72 @@ const FormData = ({ heading, notes, addNotes }) => {
     });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className='title-input'>
-        <label htmlFor='Title'>{heading}</label>
-        <input
-          name='title'
-          type='text'
-          placeholder='Add new note'
-          value={formData.title}
-          onChange={handleChange}
-        />
-      </div>
-      <div className='select-options'>
-        <label htmlFor='select'>Select Priority:</label>
-        <select
-          type='text'
-          name='priority'
-          value={formData.priority}
-          onChange={handleChange}
-        >
-          <option value='High'>High</option>
-          <option value='Medium'>Medium</option>
-          <option value='Low'>Low</option>
-        </select>
-      </div>
+    <>
+      <div className='form-title'>
+        <h1 htmlFor='Title'>{heading}</h1>
 
-      <div className='select-options'>
-        <label htmlFor='select'>Select Category:</label>
-        <select
-          type='text'
-          name='category'
-          value={formData.category}
-          onChange={handleChange}
+        <Button
+          className='add-notes'
+          onClick={() => setVisibility(!formVisible)}
         >
-          <option value='Work'>Work</option>
-          <option value='School'>School</option>
-          <option value='Personal'>Personal</option>
-          <option value='Meeting'>Meeting</option>
-        </select>
+          {formVisible ? 'Close Form x' : 'Add Notes +'}
+        </Button>
       </div>
+      {formVisible && (
+        <form onSubmit={handleSubmit}>
+          <div className='title-input'>
+            <input
+              name='title'
+              type='text'
+              placeholder='Add new note'
+              value={formData.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='select-options'>
+            <label htmlFor='select'>Select Priority:</label>
+            <select
+              type='text'
+              name='priority'
+              value={formData.priority}
+              onChange={handleChange}
+            >
+              <option value='High'>High</option>
+              <option value='Medium'>Medium</option>
+              <option value='Low'>Low</option>
+            </select>
+          </div>
 
-      <div className='description'>
-        <input
-          name='description'
-          type='textarea'
-          value={formData.description}
-          placeholder='Add description'
-          onChange={handleChange}
-        />
-      </div>
-      <Button type='submit' className='add-note'>
-        Add Note
-      </Button>
-    </form>
+          <div className='select-options'>
+            <label htmlFor='select'>Select Category:</label>
+            <select
+              type='text'
+              name='category'
+              value={formData.category}
+              onChange={handleChange}
+            >
+              <option value='Work'>Work</option>
+              <option value='School'>School</option>
+              <option value='Personal'>Personal</option>
+              <option value='Meeting'>Meeting</option>
+            </select>
+          </div>
+
+          <div className='description'>
+            <input
+              name='description'
+              type='textarea'
+              value={formData.description}
+              placeholder='Add description'
+              onChange={handleChange}
+            />
+          </div>
+          <Button type='submit' className='add-note'>
+            Add Note
+          </Button>
+        </form>
+      )}
+    </>
   );
 };
 
