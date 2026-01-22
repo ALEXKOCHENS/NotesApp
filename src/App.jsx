@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import FormData from './components/FormData';
 import NoteList from './components/NoteList';
 const App = () => {

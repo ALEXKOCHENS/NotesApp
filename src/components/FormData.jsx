@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
+import NoteInput from './NoteInput';
 
 const FormData = ({ heading, notes, addNotes }) => {
   const [formData, setFormData] = useState({
@@ -56,19 +57,15 @@ const FormData = ({ heading, notes, addNotes }) => {
       </div>
       {isFormVisible && (
         <form onSubmit={handleSubmit}>
-          <div className='title-input'>
-            <input
-              name='title'
-              type='text'
-              placeholder='Add new note'
-              value={formData.title}
-              onChange={handleChange}
-            />
-          </div>
+          <NoteInput
+            name={'title'}
+            onChange={handleChange}
+            value={formData.name}
+            placeholder={'Add Note'}
+          />
           <div className='select-options'>
             <label htmlFor='select'>Select Priority:</label>
             <select
-              type='text'
               name='priority'
               value={formData.priority}
               onChange={handleChange}
@@ -82,7 +79,6 @@ const FormData = ({ heading, notes, addNotes }) => {
           <div className='select-options'>
             <label htmlFor='select'>Select Category:</label>
             <select
-              type='text'
               name='category'
               value={formData.category}
               onChange={handleChange}
@@ -95,7 +91,7 @@ const FormData = ({ heading, notes, addNotes }) => {
           </div>
 
           <div className='description'>
-            <input
+            <NoteInput
               name='description'
               type='textarea'
               value={formData.description}

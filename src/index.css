@@ -9,16 +9,17 @@ body {
 }
 
 form {
-  /* border: 1px solid purple;
-  border-radius: 8px; */
+  border: 1px solid greenyellow;
+  border-radius: 8px;
   width: 100%;
-  max-width: 400px;
-  padding-bottom: 10px;
+  max-width: 500px;
+  padding-top: 10px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background: #f9f9f9;
 }
 
 .title-input {
@@ -91,24 +92,30 @@ form {
 .no-notes {
   text-align: center;
   color: red;
+  font-weight: bold;
+  margin: 7px auto;
 }
 
 .notes {
   width: 100%;
-  max-width: 470px;
-  margin: 22px auto;
+  max-width: 490px;
+  margin: 7px auto;
   padding-bottom: 10px;
+  border: 2px solid #121212;
+  border-radius: 8px;
 }
 
 .note-list {
   border-radius: 8px;
-  background: #e5e2e2;
+  background: #ddd;
   padding: 15px;
   display: flex;
-  gap: 2px;
+  gap: 7px;
   flex-direction: column;
   justify-content: center;
-  margin-top: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .note-list span {
@@ -116,7 +123,7 @@ form {
 }
 
 .note-list strong {
-  padding: 7px;
+  padding-right: 10px;
 }
 
 .add-notes {
@@ -129,6 +136,7 @@ form {
   border-radius: 10px;
   font-weight: bold;
   font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .form-title {
@@ -150,4 +158,5 @@ form {
 .add-notes:hover {
   background: #80008015;
   transition: all ease 0.3s;
+  border: 2px solid greenyellow;
 }

@@ -8,26 +8,42 @@ const NoteList = ({ notes }) => {
   }
 
   return (
-    <div className='notes'>
-      {notes.map((note) => (
-        <div key={note.id} className='note-list'>
-          <span>
-            <strong>Title:</strong> {note.title}
-          </span>
-          <span>
-            <strong>Priority: </strong>
-            {note.priority}
-          </span>
-          <span>
-            <strong>Category:</strong> {note.category}
-          </span>
-          <span>
-            <strong>Description:</strong>
-            {note.description}
-          </span>
-        </div>
-      ))}
-    </div>
+    <>
+      <p
+        style={{
+          width: '100%',
+          fontSize: '20px',
+          maxWidth: '400px',
+          textAlign: 'left',
+          margin: '7px 15px',
+          padding: '15px',
+          fontWeight: 'bold',
+          color: 'purple',
+        }}
+      >
+        Recent Notes:
+      </p>
+      <div className='notes'>
+        {notes.map((note) => (
+          <div key={note.id} className='note-list'>
+            <span>
+              <strong>Title:</strong> {note.title}
+            </span>
+            <span>
+              <strong>Priority: </strong>
+              {note.priority}
+            </span>
+            <span>
+              <strong>Category:</strong> {note.category}
+            </span>
+            <span>
+              <strong>Description:</strong>
+              {note.description}
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
