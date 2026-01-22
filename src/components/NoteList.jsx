@@ -1,4 +1,5 @@
-const NoteList = ({ notes }) => {
+import Button from './Button';
+const NoteList = ({ notes, deleteNote }) => {
   if (notes.length === 0) {
     return (
       <p className='no-notes'>
@@ -39,6 +40,9 @@ const NoteList = ({ notes }) => {
               <strong>Description:</strong>
               {note.description}
             </span>
+            <Button className='delete-btn' onClick={() => deleteNote(note.id)}>
+              Delete
+            </Button>
           </div>
         ))}
       </div>
