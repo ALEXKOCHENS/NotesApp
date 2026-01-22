@@ -1,4 +1,10 @@
-const NoteInput = ({ name, value, onChange, placeholder, type }) => {
+const NoteInput = ({
+  name,
+  value,
+  onChange,
+  placeholder,
+  required = false,
+}) => {
   return (
     <div className='title-input'>
       <input
@@ -6,7 +12,7 @@ const NoteInput = ({ name, value, onChange, placeholder, type }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        type={type}
+        required={required}
       />
     </div>
   );

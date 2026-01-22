@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
-import NoteInput from './NoteInput';
+import NoteInput from '../Inputs/NoteInput';
+import SelectInput from '../Inputs/SelectInput';
 
 const FormData = ({ heading, notes, addNotes }) => {
   const [formData, setFormData] = useState({
@@ -59,36 +60,38 @@ const FormData = ({ heading, notes, addNotes }) => {
         <form onSubmit={handleSubmit}>
           <NoteInput
             name={'title'}
+            type='text'
             onChange={handleChange}
             value={formData.name}
             placeholder={'Add Note'}
+            required
           />
-          <div className='select-options'>
-            <label htmlFor='select'>Select Priority:</label>
-            <select
-              name='priority'
-              value={formData.priority}
-              onChange={handleChange}
-            >
-              <option value='High'>High</option>
-              <option value='Medium'>Medium</option>
-              <option value='Low'>Low</option>
-            </select>
-          </div>
 
-          <div className='select-options'>
-            <label htmlFor='select'>Select Category:</label>
-            <select
-              name='category'
-              value={formData.category}
-              onChange={handleChange}
-            >
-              <option value='Work'>Work</option>
-              <option value='School'>School</option>
-              <option value='Personal'>Personal</option>
-              <option value='Meeting'>Meeting</option>
-            </select>
-          </div>
+          <SelectInput
+            className='select-options'
+            name='priority'
+            label={'Select Priority:'}
+            value={formData.priority}
+            onChange={handleChange}
+            options={[
+              { value: 'High', label: 'High' },
+              { value: 'Medium', label: 'Medium' },
+              { value: 'Low', label: 'Low' },
+            ]}
+          />
+          <SelectInput
+            className='select-options'
+            name='priority'
+            label={'Select Category:'}
+            value={formData.category}
+            onChange={handleChange}
+            options={[
+              { value: 'Work', label: 'Work' },
+              { value: 'School', label: 'School' },
+              { value: 'Personal', label: 'Personal' },
+              { value: 'Meeting', label: 'Meeting' },
+            ]}
+          />
 
           <div className='description'>
             <NoteInput
@@ -97,6 +100,7 @@ const FormData = ({ heading, notes, addNotes }) => {
               value={formData.description}
               placeholder='Add description'
               onChange={handleChange}
+              required
             />
           </div>
           <Button type='submit' className='add-note'>
