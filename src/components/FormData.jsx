@@ -94,9 +94,8 @@ const FormData = ({ heading, notes, addNotes }) => {
           />
 
           <div className='description'>
-            <NoteInput
+            <textarea
               name='description'
-              type='textarea'
               value={formData.description}
               placeholder='Add description'
               onChange={handleChange}

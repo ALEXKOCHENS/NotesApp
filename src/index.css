@@ -170,3 +170,10 @@ form {
   border: none;
   padding: 10px;
 }
+
+textarea {
+  border-radius: 8px;
+  padding: 10px;
+  width: 270px;
+  border: 2px solid #121212;
+}
