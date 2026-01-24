@@ -100,6 +100,8 @@ const FormData = ({ heading, notes, addNotes }) => {
               placeholder='Add description'
               onChange={handleChange}
               required
+              rows={5}
+              columns={50}
             />
           </div>
           <Button type='submit' className='add-note'>
