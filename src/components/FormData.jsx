@@ -62,7 +62,7 @@ const FormData = ({ heading, notes, addNotes }) => {
             name={'title'}
             type='text'
             onChange={handleChange}
-            value={formData.name}
+            value={formData.title}
             placeholder={'Add Note'}
             required
           />
@@ -81,7 +81,7 @@ const FormData = ({ heading, notes, addNotes }) => {
           />
           <SelectInput
             className='select-options'
-            name='priority'
+            name='category'
             label={'Select Category:'}
             value={formData.category}
             onChange={handleChange}
