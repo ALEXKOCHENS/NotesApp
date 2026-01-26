@@ -15,10 +15,10 @@ const FormData = ({ heading, notes, addNotes }) => {
   const [isFormVisible, setVisibility] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
